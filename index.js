@@ -1,36 +1,29 @@
-// проверка
-// if (window.File && window.FileReader && window.FileList && window.Blob) {
-// 	// Работает
-// } else {
-// 	alert('File API не поддерживается данным браузером');
-// }
+// console.log('hello from Node.js')
 
-function handleFileSelect(evt) {
-	var files = evt.target.files; // FileList object
-	// files is a FileList of File objects. List some properties.
+// оставить этот файл очень компактным: только подключение
+// самого приложения (файл index.js из подкаталога /app, созданного ранее)
+require('./app/index')
 
 
-	// console.log(document.getElementById('files').files[0].name);
+// инициализирует движок handlebars и устанавливает каталог
+// шаблонов в views/layouts. это каталог, в котором будут храниться шаблоны
+const path = require('path')
+const express = require('express')
+const exphbs = require('express-handlebars')
 
-	var box = [];
+// const app = express()
+// app.engine('.hbs', exphbs({
+//     defaultLayout: 'main',
+//     extname: '.hbs',
+//     layoutsDir: path.join(__dirname, 'views/layouts')
+// }))
+// app.set('view engine', '.hbs')
+// app.set('views', path.join(__dirname, 'views'))
 
-	for (i in files) {
-		// console.log(document.getElementById('files').files[i].name);
-		x = document.getElementById('files').files[i].name;
-		box.push(x);
-	}
-	// box.splice(-1,3);
-	var box = box.filter(Boolean);
-	// var box = box.splice(-1,3);
-	console.log(box);
-	for (i in box) {
-		console.log(typeof box[i]);
-	}
-
-	var x;
-	for ( x in box ) {
-		box[x] = box[x].replace('.png', '');
-	}
-	console.log(box);
-}
-document.getElementById('files').addEventListener('change', handleFileSelect, false);
+// app.listen(3000)
+//
+// app.get('/', (request, response) => {
+//     response.render('home', {
+//         name: 'John'
+//     })
+// })
