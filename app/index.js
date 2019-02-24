@@ -1,33 +1,50 @@
 const fs = require('fs')
 const path = require('path')
 const folderPath = './_src'
-const template = require('./template')
+// const template = require('./template')
+const fileType = '.svg'
+const exportFileType = '.post.css'
 // require('./template')
-
 // fs.readdirSync(folderPath)
 // console.log(fs.readdirSync(folderPath))
 
-var svgFilesList = fs.readdirSync(folderPath);
-// console.log(typeof svgFilesList)
+// const Filehound = require('filehound');
+// Filehound.create()
+//   .ext('svg')
+//   .paths(folderPath)
+//   .find((err, svgFiles) => {
+//     if (err) return console.error("handle err", err);
+//
+//     console.log(svgFiles);
+// });
+
+function getFilesFromPath(path, extension) {
+    let dir = fs.readdirSync(path);
+    return dir.filter( elm => elm.match(new RegExp(`.*\.(${extension})`)));
+}
+
+// var svgFilesList = fs.readdirSync(folderPath);
+var svgFilesList = getFilesFromPath(folderPath, fileType);
+// console.log(svgFilesList);
 // var data = template.zaz();
-
 // var svgName = svgFilesList;
-
-
-// var x;
-
 for (i in svgFilesList) {
-  svgFilesList[i] = svgFilesList[i].replace('.svg', '');
+  svgFilesList[i] = svgFilesList[i].replace(fileType, '');
 
-  var data = "." + svgFilesList[i] + " {\n\tbackground-image: url('" + svgFilesList[i] + ".svg')\n}\n";
+  var data = "." + svgFilesList[i] + " {\n\tbackground-image: url('" + svgFilesList[i] + fileType + "')\n}\n";
 
-  fs.writeFile(folderPath + "/" + svgFilesList[i] + ".post.css", data, function(err) {
-      if(err) {
-          return console.log(err);
-      }
-      console.log("The file " + svgFilesList[i] + ".post.css" + " created!");
+  fs.writeFile(folderPath + "/" + svgFilesList[i] + exportFileType, data, function(err) {
+    if(err) {
+        return console.log(svgFilesList[i] + fileType + " was not written");
+    }
+    console.log("The file " + svgFilesList[i] + exportFileType + " created!");
   });
 }
+
+
+// console.log(getFilesFromPath(folderPath, fileType));
+//[ '4glaza.svg', 'ride.svg' ]
+
 
 // console.log(svgFilesList);
 // console.log(typeof svgFilesList);
@@ -40,7 +57,6 @@ for (i in svgFilesList) {
 // var g = 10;
 // template.kek(g);
 
-
 // var stream = fs.createWriteStream("my_file.txt");
 // var stream = fs.createWriteStream("my_file.txt");
 // stream.once('open', function(fd) {
@@ -49,8 +65,6 @@ for (i in svgFilesList) {
 //   stream.end();
 // });
 
-
-
 // fs.readdir(folderPath, function(err, items) {
 //     console.log(items);
 //
@@ -58,8 +72,6 @@ for (i in svgFilesList) {
 //         console.log(items[i]);
 //     }
 // });
-
-
 
 // const calc = require('./calc')
 // const numbersToAdd = [

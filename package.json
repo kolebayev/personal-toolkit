@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
+    "filehound": "^1.17.0",
     "lodash": "^4.17.11"
   }
 }
