@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const folderPath = './_src'
-const templ = require('./template')
+const template = require('./template')
 const fileType = '.svg'
 const exportFileType = '.post.css'
 // require('./template')
@@ -35,7 +35,7 @@ for (i in svgFilesList) {
   svgFilesList[i] = svgFilesList[i].replace(fileType, '');
 
   // var data = "." + svgFilesList[i] + " {\n\tbackground-image: url('" + svgFilesList[i] + fileType + "')\n}\n";
-  var data = templ(svgFilesList[i], fileType);
+  var data = template(svgFilesList[i], fileType);
   // var data = require('./powerlevel')(9050);
   // console.log(template(svgFilesList[i], fileType));
   // console.log(templ(svgFilesList[i], fileType));

@@ -7,9 +7,9 @@ require('./app/index')
 
 // инициализирует движок handlebars и устанавливает каталог
 // шаблонов в views/layouts. это каталог, в котором будут храниться шаблоны
-const path = require('path')
-const express = require('express')
-const exphbs = require('express-handlebars')
+// const path = require('path')
+// const express = require('express')
+// const exphbs = require('express-handlebars')
 
 // const app = express()
 // app.engine('.hbs', exphbs({

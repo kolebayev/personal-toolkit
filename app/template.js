@@ -29,12 +29,11 @@
 //     return dir.filter( elm => elm.match(new RegExp(`.*\.(${extension})`)));
 // }
 
-function templ(name, extension) {
+function template(name, extension) {
     var x = "." + name + " {\n\tbackground-image: url('" + name + extension + "')\n}\n";
     return x;
-    console.log(x);
 }
-module.exports = templ;
+module.exports = template;
 // var data = "." + svgFilesList[i] + " {\n\tbackground-image: url('" + svgFilesList[i] + fileType + "')\n}\n";
 
 // module.exports = templ;
