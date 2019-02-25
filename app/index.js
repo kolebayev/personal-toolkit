@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const folderPath = './_src'
-// const template = require('./template')
+const templ = require('./template')
 const fileType = '.svg'
 const exportFileType = '.post.css'
 // require('./template')
@@ -23,15 +23,22 @@ function getFilesFromPath(path, extension) {
     return dir.filter( elm => elm.match(new RegExp(`.*\.(${extension})`)));
 }
 
+// console.log(template(svgFilesList[1], fileType));
+
 // var svgFilesList = fs.readdirSync(folderPath);
 var svgFilesList = getFilesFromPath(folderPath, fileType);
+// var data = templ('real', 'talk');
 // console.log(svgFilesList);
 // var data = template.zaz();
 // var svgName = svgFilesList;
 for (i in svgFilesList) {
   svgFilesList[i] = svgFilesList[i].replace(fileType, '');
 
-  var data = "." + svgFilesList[i] + " {\n\tbackground-image: url('" + svgFilesList[i] + fileType + "')\n}\n";
+  // var data = "." + svgFilesList[i] + " {\n\tbackground-image: url('" + svgFilesList[i] + fileType + "')\n}\n";
+  var data = templ(svgFilesList[i], fileType);
+  // var data = require('./powerlevel')(9050);
+  // console.log(template(svgFilesList[i], fileType));
+  // console.log(templ(svgFilesList[i], fileType));
 
   fs.writeFile(folderPath + "/" + svgFilesList[i] + exportFileType, data, function(err) {
     if(err) {
@@ -42,7 +49,7 @@ for (i in svgFilesList) {
 }
 
 
-// console.log(getFilesFromPath(folderPath, fileType));
+
 //[ '4glaza.svg', 'ride.svg' ]
 
 

@@ -24,9 +24,23 @@
 // module.exports.template = template
 //
 
+// function getFilesFromPath(path, extension) {
+//     let dir = fs.readdirSync(path);
+//     return dir.filter( elm => elm.match(new RegExp(`.*\.(${extension})`)));
+// }
+
+function templ(name, extension) {
+    var x = "." + name + " {\n\tbackground-image: url('" + name + extension + "')\n}\n";
+    return x;
+    console.log(x);
+}
+module.exports = templ;
+// var data = "." + svgFilesList[i] + " {\n\tbackground-image: url('" + svgFilesList[i] + fileType + "')\n}\n";
+
+// module.exports = templ;
 // module.exports.template = template;
 // module.exports = {
-     // template: template
+     // templ: templ
     // template : template,
     // kek : kek,
     // lol : lol,
