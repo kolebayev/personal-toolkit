@@ -25,5 +25,5 @@ Examples:
 
 The `~` means that is input by the user is replaced to the home directory (_users/username_).
 
-After app done, export directory can be reached by `⌘ + click` on export path shown in terminal messages.
+After app done, export directory can be reached by `⌘ + click` on export path shown in terminal messages.  
 If export directory doesn't exist, it will be created automatically.
