@@ -14,6 +14,7 @@ Template file: `./app/template.js`
 
 ## Install
 `git clone https://github.com/kolebayev/pctc.git`  
+`cd pctc`  
 `npm i`  
 `npm start`  
 
