@@ -32,7 +32,7 @@ console.log('\n=================================\n\n');
 // read files in input path, check if files exist
 var importFilesList = getFilesFromPath(importFolderPath, importFileType);
 if (importFilesList.length === 0) {
-  console.log ("No " + importFileType + " found in working directory");
+  console.log ("No " + importFileType + " found in import folder\n");
   process.exit();
 }
 
