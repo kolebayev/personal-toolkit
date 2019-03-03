@@ -10,7 +10,7 @@ App looks through entered directory for `.svg` files and creates `.post.css` fil
 	background-image: url('svgFileName.svg');
 }
 ```
-Template file: `./app/template.js`
+Template file can be changed: `./app/template.js`
 
 ## Install
 `git clone https://github.com/kolebayev/pctc.git`  
