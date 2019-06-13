@@ -2,8 +2,8 @@
 # Tool box
 
 ## Install
-`git clone https://github.com/kolebayev/pctc.git`  
-`cd pctc`  
+`git clone https://github.com/kolebayev/toolBox.git`  
+`cd toolBox`  
 `npm i`  
 `npm start` or `node toolbox.js` 
 
