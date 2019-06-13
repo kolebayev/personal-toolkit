@@ -1,22 +1,9 @@
-
-// import pctc as './pctc/index';
-// require('./pctc/index')
-// const pctc = require('./pctc/index')
-// require('./colordiffcalc/index')
-
 // https://github.com/terkelg/prompts#selectmessage-choices-initial-hint-warn
-
-// const exec = require('child_process').exec;
-// const execFile = require('child_process').execFile;
-
-const postCssTemplateCreator = require("./pctc/index.js");
-const colorDifferenceCalculator = require("./colordiffcalc/index.js");
-
 'use strict';
 
-// const { prompt } = require('./');
 const prompt = require('prompts');
-
+const postCssTemplateCreator = require("./pctc/index.js");
+const colorDifferenceCalculator = require("./colordiffcalc/index.js");
 let interval;
 
 (async function(){
@@ -32,12 +19,9 @@ let interval;
         }
     ];
     const answers = await prompt(questions, {onCancel:cleanup, onSubmit:cleanup});
+
     console.log('\n\n\n');
-    // if (answers.tool === 'pctc' ) {
-    //     postCssTemplateCreator.run();
-    // } else {
-    //     colorDifferenceCalculator.run();
-    // }
+
     switch(answers.tool) {
         case 'pctc':
             postCssTemplateCreator.run();

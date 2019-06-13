@@ -1,7 +1,6 @@
 module.exports = {
   run: function () {
 
-
     // node modules
     const fs = require('fs')
     const path = require('path')
@@ -17,7 +16,6 @@ module.exports = {
     // input/output files format
     const importFileType = '.svg'
     const exportFileType = '.post.css'
-
 
     // shows entry instructions in terminal
     entryInstructions();
@@ -56,10 +54,5 @@ module.exports = {
 
     finalInstructions(importFilesList, exportFolderPath);
 
-
-
   }
 }
-
-
-
