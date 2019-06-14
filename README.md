@@ -31,6 +31,8 @@ After app done, export directory can be reached by `⌘ + click` on export path 
 If export directory doesn't exist, it will be created automatically.
 
 
-## Color diff calculator
+## Color diff calculator  
 
-*in development*
+**Color diff calculator** shows difference between two colors in `HSL` values.  
+Input: color `HEX`. Works both with and without `#`, with 6- and 3-digit notations.  
+Output: object
