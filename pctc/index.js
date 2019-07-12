@@ -45,11 +45,12 @@ module.exports = {
       var data = template(importFilesList[i], importFileType);
       // writes export files to directory
       fs.writeFileSync(exportFolderPath + '/' + importFilesList[i] + exportFileType, data, function(error) {
-        if(error) {
+        if (error) {
           console.log('\n' + importFilesList[i] + exportFileType + " was not written.");
+        } else {
+          console.log("The file " + importFilesList[i] + exportFileType + " created.");
         }
       });
-      console.log("The file " + importFilesList[i] + exportFileType + " created.");
     }
 
     finalInstructions(importFilesList, exportFolderPath);
