@@ -36,3 +36,7 @@ If export directory doesn't exist, it will be created automatically.
 **Color diff calculator** shows difference between two colors in `HSL` values.  
 Input: color `HEX`. Works both with and without `#`, with 6- and 3-digit notations.  
 Output: object
+
+## icons2components  
+
+**icons2components** wraps svg icons into single react component
