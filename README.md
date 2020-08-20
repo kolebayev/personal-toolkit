@@ -1,5 +1,5 @@
 
-# Tool box
+# Tool kit
 
 ## Install
 `git clone https://github.com/kolebayev/toolBox.git`  
