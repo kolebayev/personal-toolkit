@@ -4,6 +4,7 @@ module.exports = {
     const casual = require('casual');
 
     const qty = 1000000;
+    const fileName = 'data';
 
     const generateUserItem = () => {
       return {
@@ -24,7 +25,7 @@ module.exports = {
     }
 
     const writer = csvWriter.createObjectCsvWriter({
-      path: './csvGenerator/data.csv',
+      path: `./csvGenerator/${fileName}.csv`,
       header: [
         { id: 'firstName', title: 'First Name' },
         { id: 'lastName', title: 'Last Name' },
