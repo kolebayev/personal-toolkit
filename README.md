@@ -40,3 +40,7 @@ Output: object
 ## icons2components  
 
 **icons2components** wraps svg icons into single react component
+
+## CSV generator
+
+Creates a CSV file with 1M entries
